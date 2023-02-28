@@ -1,0 +1,76 @@
+#version 330 core
+
+out vec4 FragColor;
+
+in vec3 tnorm;
+in vec3 vertex_inWorldSpace;
+in vec2 TexCoord;
+uniform sampler2D texture1;
+
+//vec3 ambient_light_color = vec3(0.5, 0.5, 0.5);
+
+//vec3 diffuse_light_color = vec3(0.0, 0.1, 0.0);
+//vec3 diffuse_light_color2 = vec3(1.0, 0.0, 0.0);
+
+//vec3 spec_light_color = vec3(0.0, 1.0, 0.6);
+//vec3 spec_light_color2 = vec3(1.0, 0.0, 0.0);
+
+uniform vec3 light_position;
+uniform vec3 light_position2;
+uniform vec3 object_color = vec3(0.5, 0.7, 0.9);
+
+uniform vec3 view_pos;
+uniform float specular_coef = 90.0;
+vec3 view_dir;
+
+struct Lightsource {    
+    vec3 position;
+
+    vec3 ambient;
+    vec3 diffuse;
+    vec3 specular;
+};  
+
+from::https://learnopengl.com/Lighting/Multiple-lights tutorial, but modified
+void main(){
+
+	//First lightsource <==========
+
+	Lightsource light1;
+	light1.position = light_position;
+	light1.ambient = vec3(0.9, 0.0, 0.0);
+	light1.diffuse = vec3(1.0, 0.0, 0.0);
+	light1.specular = vec3(1.0, 1.0, 1.0);
+
+	vec3 norm = normalize(tnorm);
+	vec3 view_dir = normalize(view_pos - vertex_inWorldSpace);
+
+
+    vec3 lightDirection = normalize(light1.position - vertex_inWorldSpace);
+
+    // diffuse shading
+    float diff = max(dot(norm, lightDirection), 0.0);
+
+    // specular shading
+    vec3 reflectDir = reflect(-lightDirection, norm);
+    float spec = pow(max(dot(view_dir, reflectDir), 0.0), 1.0);
+
+    // attenuation
+    float distance = length(light1.position - vertex_inWorldSpace);
+    float attenuation = 1.0 / (2.0 + 2.0 * distance + 2.0 * (distance * distance));  
+	
+    // combine results
+    vec3 ambient  = light1.ambient;
+    vec3 diffuse  = light1.diffuse * diff;
+    vec3 specular = light1.specular * spec;
+    ambient = ambient * attenuation;
+    diffuse = diffuse * attenuation;
+    specular = specular * attenuation;
+
+    vec3 result = (ambient + diffuse + specular);
+    //===============================================================================================================================
+
+	//vec3 result = (ambient + diffuse + specular) + (ambient + diffuse2 + specular2);
+	FragColor = vec4(result, 1.0) * texture2D(texture1, TexCoord);
+
+}

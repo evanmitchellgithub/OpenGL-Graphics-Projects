@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{C1D2FF96-EEAD-48AB-869C-E0895D72B4A3}</ProjectGuid>
+    <RootNamespace>Lab04</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Lab 04</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\build\executables\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\build\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\build\executables\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)\build\intermediate\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\libs\glm;$(SolutionDir)\libs\assimp\include;$(SolutionDir)\libs\glew-1.10.0\include;$(SolutionDir)\libs\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)\libs\glm;$(SolutionDir)\libs\assimp\lib\Debug;$(SolutionDir)\libs\glew-1.10.0\lib\Release\Win32;$(SolutionDir)\libs\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;freeglut.lib;glew32.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)\libs\glm;$(SolutionDir)\libs\assimp\include;$(SolutionDir)\libs\glew-1.10.0\include;$(SolutionDir)\libs\freeglut\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)\libs\glm;$(SolutionDir)\libs\assimp\lib\Debug;$(SolutionDir)\libs\glew-1.10.0\lib\Release\Win32;$(SolutionDir)\libs\freeglut\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;freeglut.lib;glew32.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="maths_funcs.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="Shaders.cpp" />
+    <ClCompile Include="skybox.cpp" />
+    <ClCompile Include="stb_image.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\libs\glm\glm\common.hpp" />
+    <ClInclude Include="..\libs\glm\glm\exponential.hpp" />
+    <ClInclude Include="..\libs\glm\glm\ext.hpp" />
+    <ClInclude Include="..\libs\glm\glm\fwd.hpp" />
+    <ClInclude Include="..\libs\glm\glm\geometric.hpp" />
+    <ClInclude Include="..\libs\glm\glm\glm.hpp" />
+    <ClInclude Include="..\libs\glm\glm\integer.hpp" />
+    <ClInclude Include="..\libs\glm\glm\mat2x2.hpp" />
+    <ClInclude Include="..\libs\glm\glm\mat2x3.hpp" />
+    <ClInclude Include="..\libs\glm\glm\mat2x4.hpp" />
+    <ClInclude Include="..\libs\glm\glm\mat3x2.hpp" />
+    <ClInclude Include="..\libs\glm\glm\mat3x3.hpp" />
+    <ClInclude Include="..\libs\glm\glm\mat3x4.hpp" />
+    <ClInclude Include="..\libs\glm\glm\mat4x2.hpp" />
+    <ClInclude Include="..\libs\glm\glm\mat4x3.hpp" />
+    <ClInclude Include="..\libs\glm\glm\mat4x4.hpp" />
+    <ClInclude Include="..\libs\glm\glm\matrix.hpp" />
+    <ClInclude Include="..\libs\glm\glm\packing.hpp" />
+    <ClInclude Include="..\libs\glm\glm\trigonometric.hpp" />
+    <ClInclude Include="..\libs\glm\glm\vec2.hpp" />
+    <ClInclude Include="..\libs\glm\glm\vec3.hpp" />
+    <ClInclude Include="..\libs\glm\glm\vec4.hpp" />
+    <ClInclude Include="..\libs\glm\glm\vector_relational.hpp" />
+    <ClInclude Include="Boids.h" />
+    <ClInclude Include="maths_funcs.h" />
+    <ClInclude Include="Model.h" />
+    <ClInclude Include="Shaders.h" />
+    <ClInclude Include="skybox.h" />
+    <ClInclude Include="stb_image.h" />
+    <ClInclude Include="teapot.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Shaders\cubemapfragment.txt" />
+    <Text Include="..\Shaders\cubemapvertex.txt" />
+    <Text Include="..\Shaders\FragmentShaderAmbient.txt" />
+    <Text Include="..\Shaders\FragmentShaderDiffuse.txt" />
+    <Text Include="..\Shaders\FragmentShaderfinal.txt" />
+    <Text Include="..\Shaders\FragmentShaderSpecular.txt" />
+    <Text Include="..\Shaders\FragmentShaderSpecular2.txt" />
+    <Text Include="..\Shaders\lightfragment.txt" />
+    <Text Include="..\Shaders\lightvertex.txt" />
+    <Text Include="..\Shaders\rgbaShaderfragment.txt" />
+    <Text Include="..\Shaders\rgbaShadervertex.txt" />
+    <Text Include="..\Shaders\simpleFragmentShader.txt" />
+    <Text Include="..\Shaders\simpleVertexShader.txt" />
+    <Text Include="..\Shaders\skyboxfragment.txt" />
+    <Text Include="..\Shaders\skyboxvertex.txt" />
+    <Text Include="..\Shaders\textureFragmentShader.txt" />
+    <Text Include="..\Shaders\textureVertexShader.txt" />
+    <Text Include="..\Shaders\VertexShaderAmbient.txt" />
+    <Text Include="..\Shaders\VertexShaderDiffuse.txt" />
+    <Text Include="..\Shaders\VertexShaderfinal.txt" />
+    <Text Include="..\Shaders\VertexShaderSpecular.txt" />
+    <Text Include="..\Shaders\VertexShaderSpecular2.txt" />
+    <Text Include="FragmentShaderfinalv2.txt" />
+    <Text Include="skyboxfragment.txt" />
+    <Text Include="skyboxvertex.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\bottle.dae" />
+    <None Include="..\camera.dae" />
+    <None Include="..\camera2.dae" />
+    <None Include="..\can.dae" />
+    <None Include="..\can2.dae" />
+    <None Include="..\fish - body.dae" />
+    <None Include="..\fish - body2.dae" />
+    <None Include="..\fish - body3.dae" />
+    <None Include="..\fish - body4.dae" />
+    <None Include="..\fish - head.dae" />
+    <None Include="..\fish - head3.dae" />
+    <None Include="..\fish - head6.dae" />
+    <None Include="..\fish - head7.dae" />
+    <None Include="..\fish - tail - base.dae" />
+    <None Include="..\fish - tail - base2.dae" />
+    <None Include="..\fish - tail - base3.dae" />
+    <None Include="..\fish - tail - end.dae" />
+    <None Include="..\fish - tail - end2.dae" />
+    <None Include="..\fish - tail - end3.dae" />
+    <None Include="..\fish - tail.dae" />
+    <None Include="..\goldfish.dae" />
+    <None Include="..\lightbox.dae" />
+    <None Include="..\PenguinSmoothBGL.dae" />
+    <None Include="..\plane.dae" />
+    <None Include="..\rubbishBinCircular.dae" />
+    <None Include="..\seabed.dae" />
+    <None Include="..\seabed2.dae" />
+    <None Include="..\seabed3.dae" />
+    <None Include="..\seabed4.dae" />
+    <None Include="..\sphere.dae" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\back2.jpg" />
+    <Image Include="..\bin_texture.jpg" />
+    <Image Include="..\bottle.png" />
+    <Image Include="..\bottle2.png" />
+    <Image Include="..\bottle3.png" />
+    <Image Include="..\bottle4.png" />
+    <Image Include="..\bottom2.jpg" />
+    <Image Include="..\Camera.jpg" />
+    <Image Include="..\Camera2.jpg" />
+    <Image Include="..\Camera4.jpg" />
+    <Image Include="..\dirt-texture.jpg" />
+    <Image Include="..\fish.jpg" />
+    <Image Include="..\fish2.jpg" />
+    <Image Include="..\fishbody.jpg" />
+    <Image Include="..\fishbody2.jpg" />
+    <Image Include="..\fishbody3.jpg" />
+    <Image Include="..\fish_head.jpg" />
+    <Image Include="..\fish_head3.jpg" />
+    <Image Include="..\fish_head4.jpg" />
+    <Image Include="..\fish_head5.jpg" />
+    <Image Include="..\fish_head7.jpg" />
+    <Image Include="..\fish_head8.jpg" />
+    <Image Include="..\fish_skin.jpg" />
+    <Image Include="..\fish_tail_base.jpg" />
+    <Image Include="..\fish_tail_base2.jpg" />
+    <Image Include="..\fish_tail_end.jpg" />
+    <Image Include="..\fish_tail_end2.jpg" />
+    <Image Include="..\front2.jpg" />
+    <Image Include="..\grass.png" />
+    <Image Include="..\grass2.png" />
+    <Image Include="..\left2.jpg" />
+    <Image Include="..\lightboxtex2.png" />
+    <Image Include="..\light_texture.jpg" />
+    <Image Include="..\penguinBody2.jpg" />
+    <Image Include="..\right2.jpg" />
+    <Image Include="..\seafloor_texture.jpg" />
+    <Image Include="..\seafloor_texture2.jpg" />
+    <Image Include="..\seafloor_texture3.jpg" />
+    <Image Include="..\seafloor_texture6.jpg" />
+    <Image Include="..\seafloor_texture7.jpg" />
+    <Image Include="..\seaweed.png" />
+    <Image Include="..\skybox\back.jpg" />
+    <Image Include="..\skybox\bottom.jpg" />
+    <Image Include="..\skybox\front.jpg" />
+    <Image Include="..\skybox\left.jpg" />
+    <Image Include="..\skybox\right.jpg" />
+    <Image Include="..\skybox\top.jpg" />
+    <Image Include="..\top2.jpg" />
+    <Image Include="..\window.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

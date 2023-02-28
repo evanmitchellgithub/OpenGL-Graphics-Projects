@@ -1,0 +1,12 @@
+﻿  main.cpp
+  maths_funcs.cpp
+  Model.cpp
+  Shaders.cpp
+C:\Users\Ev123\Desktop\5th Year\realtime rendering\Assignment 4\Lab04\Shaders.cpp(72,36): warning C4129: 'S': unrecognized character escape sequence
+  skybox.cpp
+  stb_image.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 742 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Lab04.vcxproj -> C:\Users\Ev123\Desktop\5th Year\realtime rendering\Assignment 4\build\executables\Release\Lab 04.exe

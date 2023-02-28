@@ -1,0 +1,20 @@
+#version 330 core
+out vec4 FragColor;
+
+in vec3 Normal;  
+in vec3 FragPos;  
+  
+uniform vec3 light_position; 
+uniform vec3 cameraPos; 
+
+in vec2 TexCoords;
+uniform sampler2D textureMap;
+
+void main()
+{
+
+    vec2 texCoord = TexCoords * 15.0; // Repeat the texture 15 times
+    vec2 wrappedCoord = mod(texCoord, 1.0); // Wrap the texture coordinates 
+    vec3 OC = texture(textureMap,wrappedCoord).rgb;
+    FragColor = vec4(OC, 1.0);
+} 

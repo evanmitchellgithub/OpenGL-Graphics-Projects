@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="maths_funcs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Model.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shaders.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="skybox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="maths_funcs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="teapot.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\glm.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\common.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\exponential.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\ext.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\fwd.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\geometric.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\integer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\mat2x2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\mat2x3.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\mat2x4.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\mat3x2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\mat3x3.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\mat3x4.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\mat4x2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\mat4x3.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\mat4x4.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\matrix.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\packing.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\trigonometric.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\vec2.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\vec3.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\vec4.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libs\glm\glm\vector_relational.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="skybox.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Boids.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Shaders\simpleFragmentShader.txt" />
+    <Text Include="..\Shaders\simpleVertexShader.txt" />
+    <Text Include="..\Shaders\FragmentShaderAmbient.txt" />
+    <Text Include="..\Shaders\FragmentShaderDiffuse.txt" />
+    <Text Include="..\Shaders\FragmentShaderSpecular.txt" />
+    <Text Include="..\Shaders\VertexShaderAmbient.txt" />
+    <Text Include="..\Shaders\VertexShaderDiffuse.txt" />
+    <Text Include="..\Shaders\VertexShaderSpecular.txt" />
+    <Text Include="..\Shaders\FragmentShaderSpecular2.txt" />
+    <Text Include="..\Shaders\VertexShaderSpecular2.txt" />
+    <Text Include="..\Shaders\textureFragmentShader.txt" />
+    <Text Include="..\Shaders\textureVertexShader.txt" />
+    <Text Include="..\Shaders\FragmentShaderfinal.txt" />
+    <Text Include="..\Shaders\VertexShaderfinal.txt" />
+    <Text Include="skyboxfragment.txt" />
+    <Text Include="skyboxvertex.txt" />
+    <Text Include="..\Shaders\skyboxfragment.txt" />
+    <Text Include="..\Shaders\skyboxvertex.txt" />
+    <Text Include="FragmentShaderfinalv2.txt" />
+    <Text Include="..\Shaders\cubemapfragment.txt" />
+    <Text Include="..\Shaders\cubemapvertex.txt" />
+    <Text Include="..\Shaders\lightfragment.txt" />
+    <Text Include="..\Shaders\lightvertex.txt" />
+    <Text Include="..\Shaders\rgbaShaderfragment.txt" />
+    <Text Include="..\Shaders\rgbaShadervertex.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\fish - body.dae" />
+    <None Include="..\fish - head.dae" />
+    <None Include="..\fish - tail.dae" />
+    <None Include="..\seabed.dae" />
+    <None Include="..\seabed2.dae" />
+    <None Include="..\fish - tail - base.dae" />
+    <None Include="..\fish - tail - end.dae" />
+    <None Include="..\fish - head3.dae" />
+    <None Include="..\fish - body2.dae" />
+    <None Include="..\rubbishBinCircular.dae" />
+    <None Include="..\fish - head6.dae" />
+    <None Include="..\PenguinSmoothBGL.dae" />
+    <None Include="..\fish - body3.dae" />
+    <None Include="..\fish - tail - base2.dae" />
+    <None Include="..\fish - tail - end2.dae" />
+    <None Include="..\seabed3.dae" />
+    <None Include="..\seabed4.dae" />
+    <None Include="..\lightbox.dae" />
+    <None Include="..\can.dae" />
+    <None Include="..\can2.dae" />
+    <None Include="..\camera.dae" />
+    <None Include="..\camera2.dae" />
+    <None Include="..\sphere.dae" />
+    <None Include="..\plane.dae" />
+    <None Include="..\fish - head7.dae" />
+    <None Include="..\fish - body4.dae" />
+    <None Include="..\fish - tail - base3.dae" />
+    <None Include="..\fish - tail - end3.dae" />
+    <None Include="..\bottle.dae" />
+    <None Include="..\goldfish.dae" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\bin_texture.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\seafloor_texture.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_head3.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\penguinBody2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_head.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_head4.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_head5.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_skin.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\dirt-texture.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\light_texture.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\skybox\back.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\skybox\bottom.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\skybox\front.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\skybox\left.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\skybox\right.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\skybox\top.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\lightboxtex2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\seafloor_texture2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\seafloor_texture6.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\seafloor_texture7.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\seafloor_texture3.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Camera.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Camera2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\Camera4.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\seaweed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\grass.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_head7.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_head8.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fishbody2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fishbody3.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fishbody.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_tail_base.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_tail_base2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_tail_end.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish_tail_end2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\bottle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\bottle2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\grass2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\window.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\bottle3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\bottle4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\fish2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\back2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\bottom2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\front2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\left2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\right2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\top2.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

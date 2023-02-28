@@ -1,0 +1,56 @@
+#version 330 core
+out vec4 FragColor;
+
+in vec3 Normal;  
+in vec3 FragPos;  
+
+uniform samplerCube skybox;
+uniform float Eta; // Ratio of indices of refraction //66
+uniform float FresnelPower;
+uniform float Chroma;
+uniform vec3 light_position; 
+uniform vec3 cameraPos; 
+uniform vec3 lightColor;
+
+void main()
+{
+    vec3 I = normalize(FragPos - cameraPos);
+
+     //fresnel component
+    float F = ((1.0-Eta) * (1.0-Eta)) / ((1.0+Eta)*(1.0+Eta));
+    float ratio = F + (1.0 - F)*pow( (1.0-dot(-I, Normal)), FresnelPower );
+
+    //Chromatic Dispersion
+    float EtaR = Eta - 0.09;
+    float EtaG = Eta;
+    float EtaB = Eta + 0.09;
+
+    //Fresnel component for Chromatic Dispersion
+    float FR = ((1.0-EtaR) * (1.0-EtaR)) / ((1.0+EtaR)*(1.0+EtaR));
+    float ratioR = FR + (1.0 - FR)*pow( (1.0-dot(-I, Normal)), FresnelPower );
+    float FG = ((1.0-EtaG) * (1.0-EtaG)) / ((1.0+EtaG)*(1.0+EtaG));
+    float ratioG = FG + (1.0 - FG)*pow( (1.0-dot(-I, Normal)), FresnelPower );
+    float FB = ((1.0-EtaB) * (1.0-EtaB)) / ((1.0+EtaB)*(1.0+EtaB));
+    float ratioB = FB + (1.0 - FB)*pow( (1.0-dot(-I, Normal)), FresnelPower );
+
+    vec3 Reflect = reflect(I, normalize(Normal));
+    vec3 ReflectColour = texture(skybox, Reflect).rgb;
+
+    vec3 RefractColour;
+    vec3 Refract = refract(I, normalize(Normal), ratio);
+    vec3 RefractR = refract(I, normalize(Normal), ratioR);
+    vec3 RefractG = refract(I, normalize(Normal), ratioG);
+    vec3 RefractB = refract(I, normalize(Normal), ratioB);
+
+    if(Chroma == 1.0){
+        RefractColour.r = texture(skybox, RefractR).r;
+        RefractColour.g = texture(skybox, RefractG).g;
+        RefractColour.b = texture(skybox, RefractB).b;
+    }
+    if(Chroma == 0.0){
+        RefractColour.rgb = texture(skybox, Refract).rgb;
+    }
+
+    vec3 color = mix(RefractColour, ReflectColour, ratio);
+    FragColor = vec4(color, 1.0);
+} 
